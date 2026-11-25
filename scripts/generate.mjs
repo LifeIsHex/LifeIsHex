@@ -152,17 +152,14 @@ function summarise(data) {
   const days = data.days;
   let longest = 0;
   let run = 0;
-  let best = days[0];
   for (const d of days) {
     run = d.count > 0 ? run + 1 : 0;
     if (run > longest) longest = run;
-    if (d.count > best.count) best = d;
   }
   return {
     ...data,
     activeDays: days.filter((d) => d.count > 0).length,
     longestStreak: longest,
-    busiest: best,
     yearsOnGitHub: new Date().getUTCFullYear() - data.createdYear,
   };
 }
@@ -207,7 +204,6 @@ const BAR_H = 38;
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const num = (n) => n.toLocaleString('en-US');
-const hex = (n) => `0x${n.toString(16).toUpperCase().padStart(4, '0')}`;
 const r2 = (n) => Math.round(n * 100) / 100;
 
 // Pointy-top hexagon centred on (cx, cy) with circumradius r.
@@ -306,58 +302,98 @@ function header(t) {
   return panel(t, H, 'mahdi.hex', 'LifeIsHex', body, `${GREETING}. ${TAGLINE}`);
 }
 
-function stats(t, d, today) {
-  const tiles = [
-    [d.lastYear, num(d.lastYear), 'contributions, last year'],
-    [d.activeDays, num(d.activeDays), 'active days, last year'],
-    [d.longestStreak, `${num(d.longestStreak)} days`, 'longest streak, last year'],
-    [d.allTime, num(d.allTime), `contributions since ${d.createdYear}`],
-    [d.publicRepos, num(d.publicRepos), 'public repositories'],
-    [d.stars, num(d.stars), 'stars earned'],
-    [d.downloads, num(d.downloads), 'release downloads'],
-    [d.yearsOnGitHub, `${num(d.yearsOnGitHub)} years`, `on GitHub, since ${d.createdYear}`],
-  ];
-  const cols = 4;
-  const gap = 12;
-  const tw = (W - PAD * 2 - gap * (cols - 1)) / cols;
-  const th = 84;
-  const top = BAR_H + 22;
-  let body = '';
-  tiles.forEach(([raw, big, label], i) => {
-    const x = PAD + (i % cols) * (tw + gap);
-    const y = top + Math.floor(i / cols) * (th + gap);
-    body += `<rect x="${x}" y="${y}" width="${tw}" height="${th}" rx="10" fill="${t.tile}" stroke="${t.border}"/>
-<path d="${hexPath(x + 20, y + 22, 6)}" fill="${t.accent}"/>
-<text x="${x + tw - 14}" y="${y + 26}" font-family="${MONO}" font-size="11" fill="${t.muted}" text-anchor="end">${hex(raw)}</text>
-<text x="${x + 14}" y="${y + 56}" font-family="${SANS}" font-size="24" font-weight="700" fill="${t.text}">${esc(big)}</text>
-<text x="${x + 14}" y="${y + 73}" font-family="${SANS}" font-size="11.5" fill="${t.soft}">${esc(label)}</text>
-`;
-  });
-  const H = top + 2 * th + gap + 22;
-  const title = `GitHub numbers for ${d.login}: ${tiles.map(([, big, label]) => `${big} ${label}`).join('; ')}.`;
-  return panel(t, H, 'stats.hex', `redrawn nightly · ${today}`, body, title);
-}
-
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-function activity(t, d) {
-  // weeks run Sunday to Saturday, one column each; odd rows shift half a cell
-  const weeks = [];
+
+// colours for the listing and for the digits drawn on each heat level
+const SYNTAX = {
+  dark: { reg: '#79c0ff', flow: '#7ee787', bp: '#f85149', onHeat: ['#6e7b89', '#f1dfb4', '#fff3d1', '#1c1300', '#1c1300'] },
+  light: { reg: '#0550ae', flow: '#116329', bp: '#cf222e', onHeat: ['#8b949e', '#3d2a00', '#2b1d00', '#1f1300', '#ffffff'] },
+};
+
+const le32 = (n) => [0, 8, 16, 24].map((s) => ((n >>> s) & 0xff).toString(16).toUpperCase().padStart(2, '0')).join(' ');
+const imm = (n) => `0x${n.toString(16).toUpperCase()}`;
+
+// The numbers as a disassembly listing: each one is loaded into a register,
+// with real x64 encodings, addresses and jump offsets.
+function cpu(t, d, today, name) {
+  const sx = SYNTAX[name];
+  const base = 0x140001000;
+  const movs = [
+    ['eax', 'B8', d.lastYear, 'contributions, last year', num(d.lastYear)],
+    ['ebx', 'BB', d.activeDays, 'active days, last year', num(d.activeDays)],
+    ['ecx', 'B9', d.longestStreak, 'longest streak, last year', `${num(d.longestStreak)} days`],
+    ['edx', 'BA', d.allTime, `contributions since ${d.createdYear}`, num(d.allTime)],
+    ['esi', 'BE', d.publicRepos, 'public repositories', num(d.publicRepos)],
+    ['edi', 'BF', d.stars, 'stars earned', num(d.stars)],
+    ['r8d', '41 B8', d.downloads, 'release downloads', num(d.downloads)],
+    ['r9d', '41 B9', d.yearsOnGitHub, `on GitHub since ${d.createdYear}`, `${num(d.yearsOnGitHub)} years`],
+  ];
+  // [bytes, mnemonic, operands as [text, kind] parts, comment label, comment value]
+  const lines = [
+    ['55', 'push', [['rbp', 'reg']]],
+    ['48 8B EC', 'mov', [['rbp', 'reg'], [', '], ['rsp', 'reg']]],
+    ...movs.map(([reg, op, value, label, shown]) => [
+      `${op} ${le32(value)}`, 'mov', [[reg, 'reg'], [', '], [imm(value), 'imm']], label, shown,
+    ]),
+  ];
+  const size = (l) => l[0].split(' ').length;
+  let addr = base;
+  const rows = lines.map((l) => { const row = { addr, l }; addr += size(l); return row; });
+  const loopTop = rows[2].addr;
+  const callAt = addr;
+  const callTarget = 0x140002000;
+  rows.push({ addr: callAt, current: true, l: [`E8 ${le32(callTarget - (callAt + 5))}`, 'call', [['<github.commit>', 'flow']], 'redrawn nightly', today] });
+  const jmpAt = callAt + 5;
+  const rel8 = (loopTop - (jmpAt + 2)) & 0xff;
+  rows.push({ addr: jmpAt, l: [`EB ${rel8.toString(16).toUpperCase().padStart(2, '0')}`, 'jmp', [['short ', ''], [loopTop.toString(16).toUpperCase(), 'flow']], 'same again tomorrow', ''] });
+
+  const top = BAR_H + 30;
+  const lh = 23;
+  const X = { gutter: PAD + 6, addr: PAD + 22, bytes: PAD + 108, mn: PAD + 262, ops: PAD + 306, cm: PAD + 446 };
+  const text = (x, y, fill, content, extra = '') =>
+    `<text x="${x}" y="${y}" font-family="${MONO}" font-size="12.5" fill="${fill}" xml:space="preserve"${extra}>${content}</text>\n`;
+  let body = '';
+  rows.forEach(({ addr: a, l, current }, i) => {
+    const y = top + i * lh;
+    const [bytes, mn, ops, label, shown] = l;
+    if (current) {
+      body += `<rect x="${PAD - 8}" y="${y - 15.5}" width="${W - PAD * 2 + 16}" height="${lh}" rx="5" fill="${t.accentSoft}"/>\n`;
+      body += `<path d="M${X.gutter - 5} ${y - 9}l8 5l-8 5z" fill="${t.accent}"/>\n`;
+    }
+    if (i === 2) body += `<circle cx="${X.gutter}" cy="${y - 4}" r="4.5" fill="${sx.bp}"/>\n`;
+    body += text(X.addr, y, t.muted, a.toString(16).toUpperCase());
+    body += text(X.bytes, y, t.soft, bytes);
+    const flow = mn === 'call' || mn === 'jmp';
+    body += text(X.mn, y, flow ? sx.flow : t.text, mn, ' font-weight="700"');
+    const colours = { reg: sx.reg, imm: t.accent, flow: sx.flow };
+    body += text(X.ops, y, t.text, ops.map(([s, kind]) => `<tspan fill="${colours[kind] || t.text}"${kind === 'imm' ? ' font-weight="700"' : ''}>${esc(s)}</tspan>`).join(''));
+    if (label) {
+      body += text(X.cm, y, t.muted, `; ${esc(label)}${shown ? ':' : ''}`);
+      if (shown) body += `<text x="${W - PAD}" y="${y}" font-family="${MONO}" font-size="12.5" font-weight="700" fill="${t.text}" text-anchor="end">${esc(shown)}</text>\n`;
+    }
+  });
+  const H = top + (rows.length - 1) * lh + 26;
+  const title = `GitHub numbers for ${d.login}, written as a disassembly listing: ${movs.map(([, , , label, shown]) => `${shown} ${label}`).join('; ')}.`;
+  return panel(t, H, 'CPU: LifeIsHex.exe', 'paused at breakpoint', body, title);
+}
+
+// The last 26 weeks as a memory dump: one hex byte per day, weeks as columns.
+function dump(t, d, name) {
+  const sx = SYNTAX[name];
+  const all = [];
   for (const day of d.days) {
     const dow = new Date(`${day.date}T00:00:00Z`).getUTCDay();
-    if (dow === 0 || !weeks.length) weeks.push([]);
-    weeks[weeks.length - 1].push({ ...day, dow });
+    if (dow === 0 || !all.length) all.push([]);
+    all[all.length - 1].push({ ...day, dow });
   }
-  const labelW = 34;
+  const weeks = all.slice(-26);
+  const labelW = 44;
   const gridX = PAD + labelW;
-  const cw = (W - PAD - gridX) / (weeks.length + 0.5);
-  const R = cw / Math.sqrt(3);
-  const top = BAR_H + 44;
-  const cy = (dow) => top + R + dow * R * 1.5;
-  const cx = (col, dow) => gridX + cw / 2 + col * cw + (dow % 2 ? cw / 2 : 0);
-
+  const cw = (W - PAD - gridX) / weeks.length;
+  const top = BAR_H + 46;
+  const rh = 24;
   let body = '';
-  // a month is labelled at its first column, unless the next label would crowd it
   const starts = [];
   weeks.forEach((week, col) => {
     const month = Number(week[0].date.slice(5, 7)) - 1;
@@ -365,33 +401,35 @@ function activity(t, d) {
   });
   starts.forEach(({ month, col }, i) => {
     const next = starts[i + 1]?.col ?? weeks.length + 1;
-    if (next - col < 3) return;
-    body += `<text x="${r2(gridX + col * cw)}" y="${top - 10}" font-family="${MONO}" font-size="11" fill="${t.soft}">${MONTHS[month]}</text>\n`;
+    if (next - col < 2) return;
+    body += `<text x="${r2(gridX + col * cw + 2)}" y="${top - 12}" font-family="${MONO}" font-size="11" fill="${t.soft}">${MONTHS[month]}</text>\n`;
   });
+  ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].forEach((n, dow) => {
+    body += `<text x="${PAD}" y="${top + dow * rh + 14.5}" font-family="${MONO}" font-size="11.5" fill="${t.muted}">${n}</text>\n`;
+  });
+  let total = 0;
   weeks.forEach((week, col) => {
     for (const day of week) {
-      body += `<path d="${hexPath(cx(col, day.dow), cy(day.dow), R - 0.9)}" fill="${t.heat[day.level]}"/>\n`;
+      total += day.count;
+      const x = r2(gridX + col * cw);
+      const y = top + day.dow * rh;
+      const byte = Math.min(day.count, 255).toString(16).toUpperCase().padStart(2, '0');
+      body += `<rect x="${x}" y="${y}" width="${r2(cw - 3)}" height="${rh - 4}" rx="4" fill="${t.heat[day.level]}"/>
+<text x="${r2(x + (cw - 3) / 2)}" y="${y + 14.5}" font-family="${MONO}" font-size="11.5" fill="${sx.onHeat[day.level]}" text-anchor="middle"${day.level ? ' font-weight="700"' : ''}>${byte}</text>\n`;
     }
   });
-  for (const [dow, name] of [[1, 'Mon'], [3, 'Wed'], [5, 'Fri']]) {
-    body += `<text x="${PAD}" y="${r2(cy(dow) + 4)}" font-family="${MONO}" font-size="11" fill="${t.soft}">${name}</text>\n`;
-  }
-
-  const bottom = cy(6) + R + 30;
-  const busy = new Date(`${d.busiest.date}T00:00:00Z`);
-  const busyLabel = `${busy.getUTCDate()} ${MONTHS[busy.getUTCMonth()]} ${busy.getUTCFullYear()}`;
-  body += `<text x="${PAD}" y="${r2(bottom)}" font-family="${MONO}" font-size="12" fill="${t.soft}">busiest day: ${busyLabel}, ${num(d.busiest.count)} contributions</text>\n`;
+  const bottom = top + 7 * rh + 22;
+  body += `<text x="${PAD}" y="${bottom}" font-family="${MONO}" font-size="12" fill="${t.soft}">one byte per day: that day's contributions, in hex</text>\n`;
   let lx = W - PAD - 38;
-  body += `<text x="${W - PAD}" y="${r2(bottom)}" font-family="${MONO}" font-size="12" fill="${t.soft}" text-anchor="end">More</text>\n`;
+  body += `<text x="${W - PAD}" y="${bottom}" font-family="${MONO}" font-size="12" fill="${t.soft}" text-anchor="end">More</text>\n`;
   for (let level = 4; level >= 0; level--) {
-    lx -= 16;
-    body += `<path d="${hexPath(lx + 8, bottom - 4, 7.5)}" fill="${t.heat[level]}"/>\n`;
+    lx -= 18;
+    body += `<rect x="${lx}" y="${bottom - 11}" width="14" height="14" rx="3" fill="${t.heat[level]}"/>\n`;
   }
-  body += `<text x="${lx - 6}" y="${r2(bottom)}" font-family="${MONO}" font-size="12" fill="${t.soft}" text-anchor="end">Less</text>\n`;
-
-  const H = Math.round(bottom + 22);
-  const title = `${num(d.lastYear)} contributions in the last year on ${d.activeDays} active days. Busiest day: ${busyLabel} with ${d.busiest.count}.`;
-  return panel(t, H, 'contributions.hex', `${num(d.lastYear)} in the last year`, body, title);
+  body += `<text x="${lx - 8}" y="${bottom}" font-family="${MONO}" font-size="12" fill="${t.soft}" text-anchor="end">Less</text>\n`;
+  const H = bottom + 24;
+  const title = `${num(total)} contributions in the last 26 weeks, shown as one hex byte per day.`;
+  return panel(t, H, 'Dump: contributions', `${num(total)} in the last 26 weeks`, body, title);
 }
 
 // ---------------------------------------------------------------- main
@@ -409,8 +447,8 @@ const today = new Date().toISOString().slice(0, 10);
 await mkdir(join(ROOT, 'assets'), { recursive: true });
 for (const [name, t] of Object.entries(THEMES)) {
   await writeFile(join(ROOT, 'assets', `header-${name}.svg`), header(t));
-  await writeFile(join(ROOT, 'assets', `stats-${name}.svg`), stats(t, data, today));
-  await writeFile(join(ROOT, 'assets', `contributions-${name}.svg`), activity(t, data));
+  await writeFile(join(ROOT, 'assets', `cpu-${name}.svg`), cpu(t, data, today, name));
+  await writeFile(join(ROOT, 'assets', `dump-${name}.svg`), dump(t, data, name));
 }
 console.log(
   `${data.login}: ${data.lastYear} contributions last year, ${data.activeDays} active days, ` +

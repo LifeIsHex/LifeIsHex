@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 347" width="840" height="347" role="img" aria-label="GitHub numbers for LifeIsHex, written as a disassembly listing: 3,178 contributions, last year; 258 active days, last year; 29 days longest streak, last year; 5,862 contributions since 2013; 10 public repositories; 17 stars earned; 977 release downloads; 13 years on GitHub since 2013.">
+<title>GitHub numbers for LifeIsHex, written as a disassembly listing: 3,178 contributions, last year; 258 active days, last year; 29 days longest streak, last year; 5,862 contributions since 2013; 10 public repositories; 17 stars earned; 977 release downloads; 13 years on GitHub since 2013.</title>
+<defs><clipPath id="clip-CPULifeIsHexexe"><rect x="0.5" y="0.5" width="839" height="346" rx="12"/></clipPath></defs>
+<g clip-path="url(#clip-CPULifeIsHexexe)">
+<rect width="840" height="347" fill="#ffffff"/>
+<rect width="840" height="38" fill="#f6f8fa"/>
+<path d="M0 38.5H840" stroke="#d0d7de"/>
+</g>
+<rect x="0.5" y="0.5" width="839" height="346" rx="12" fill="none" stroke="#d0d7de"/>
+<path d="M31,12L37.06,15.5L37.06,22.5L31,26L24.94,22.5L24.94,15.5Z" fill="#9a6700"/>
+<text x="46" y="23.5" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="13" fill="#57606a">CPU: LifeIsHex.exe</text>
+<text x="814" y="23.5" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12" fill="#8b949e" text-anchor="end">paused at breakpoint</text>
+<text x="48" y="68" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" fill="#8b949e" xml:space="preserve">140001000</text>
+<text x="134" y="68" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" fill="#57606a" xml:space="preserve">55</text>
+<text x="288" y="68" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" fill="#1f2328" xml:space="preserve" font-weight="700">push</text>
+<text x="332" y="68" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" fill="#1f2328" xml:space="preserve"><tspan fill="#0550ae">rbp</tspan></text>
+<text x="48" y="91" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" fill="#8b949e" xml:space="preserve">140001001</text>
+<text x="134" y="91" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" fill="#57606a" xml:space="preserve">48 8B EC</text>
+<text x="288" y="91" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" fill="#1f2328" xml:space="preserve" font-weight="700">mov</text>
+<text x="332" y="91" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" fill="#1f2328" xml:space="preserve"><tspan fill="#0550ae">rbp</tspan><tspan fill="#1f2328">, </tspan><tspan fill="#0550ae">rsp</tspan></text>
+<circle cx="32" cy="110" r="4.5" fill="#cf222e"/>
+<text x="48" y="114" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" fill="#8b949e" xml:space="preserve">140001004</text>
+<text x="134" y="114" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" fill="#57606a" xml:space="preserve">B8 6A 0C 00 00</text>
+<text x="288" y="114" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" fill="#1f2328" xml:space="preserve" font-weight="700">mov</text>
+<text x="332" y="114" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" fill="#1f2328" xml:space="preserve"><tspan fill="#0550ae">eax</tspan><tspan fill="#1f2328">, </tspan><tspan fill="#9a6700" font-weight="700">0xC6A</tspan></text>
+<text x="472" y="114" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" fill="#8b949e" xml:space="preserve">; contributions, last year:</text>
+<text x="814" y="114" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" font-weight="700" fill="#1f2328" text-anchor="end">3,178</text>
+<text x="48" y="137" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" fill="#8b949e" xml:space="preserve">140001009</text>
+<text x="134" y="137" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" fill="#57606a" xml:space="preserve">BB 02 01 00 00</text>
+<text x="288" y="137" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" fill="#1f2328" xml:space="preserve" font-weight="700">mov</text>
+<text x="332" y="137" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" fill="#1f2328" xml:space="preserve"><tspan fill="#0550ae">ebx</tspan><tspan fill="#1f2328">, </tspan><tspan fill="#9a6700" font-weight="700">0x102</tspan></text>
+<text x="472" y="137" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" fill="#8b949e" xml:space="preserve">; active days, last year:</text>
+<text x="814" y="137" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" font-weight="700" fill="#1f2328" text-anchor="end">258</text>
+<text x="48" y="160" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" fill="#8b949e" xml:space="preserve">14000100E</text>
+<text x="134" y="160" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" fill="#57606a" xml:space="preserve">B9 1D 00 00 00</text>
+<text x="288" y="160" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" fill="#1f2328" xml:space="preserve" font-weight="700">mov</text>
+<text x="332" y="160" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" fill="#1f2328" xml:space="preserve"><tspan fill="#0550ae">ecx</tspan><tspan fill="#1f2328">, </tspan><tspan fill="#9a6700" font-weight="700">0x1D</tspan></text>
+<text x="472" y="160" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" fill="#8b949e" xml:space="preserve">; longest streak, last year:</text>
+<text x="814" y="160" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" font-weight="700" fill="#1f2328" text-anchor="end">29 days</text>
+<text x="48" y="183" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" fill="#8b949e" xml:space="preserve">140001013</text>
+<text x="134" y="183" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" fill="#57606a" xml:space="preserve">BA E6 16 00 00</text>
+<text x="288" y="183" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" fill="#1f2328" xml:space="preserve" font-weight="700">mov</text>
+<text x="332" y="183" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" fill="#1f2328" xml:space="preserve"><tspan fill="#0550ae">edx</tspan><tspan fill="#1f2328">, </tspan><tspan fill="#9a6700" font-weight="700">0x16E6</tspan></text>
+<text x="472" y="183" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" fill="#8b949e" xml:space="preserve">; contributions since 2013:</text>
+<text x="814" y="183" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" font-weight="700" fill="#1f2328" text-anchor="end">5,862</text>
+<text x="48" y="206" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" fill="#8b949e" xml:space="preserve">140001018</text>
+<text x="134" y="206" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" fill="#57606a" xml:space="preserve">BE 0A 00 00 00</text>
+<text x="288" y="206" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" fill="#1f2328" xml:space="preserve" font-weight="700">mov</text>
+<text x="332" y="206" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" fill="#1f2328" xml:space="preserve"><tspan fill="#0550ae">esi</tspan><tspan fill="#1f2328">, </tspan><tspan fill="#9a6700" font-weight="700">0xA</tspan></text>
+<text x="472" y="206" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" fill="#8b949e" xml:space="preserve">; public repositories:</text>
+<text x="814" y="206" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" font-weight="700" fill="#1f2328" text-anchor="end">10</text>
+<text x="48" y="229" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" fill="#8b949e" xml:space="preserve">14000101D</text>
+<text x="134" y="229" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" fill="#57606a" xml:space="preserve">BF 11 00 00 00</text>
+<text x="288" y="229" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" fill="#1f2328" xml:space="preserve" font-weight="700">mov</text>
+<text x="332" y="229" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" fill="#1f2328" xml:space="preserve"><tspan fill="#0550ae">edi</tspan><tspan fill="#1f2328">, </tspan><tspan fill="#9a6700" font-weight="700">0x11</tspan></text>
+<text x="472" y="229" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" fill="#8b949e" xml:space="preserve">; stars earned:</text>
+<text x="814" y="229" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" font-weight="700" fill="#1f2328" text-anchor="end">17</text>
+<text x="48" y="252" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" fill="#8b949e" xml:space="preserve">140001022</text>
+<text x="134" y="252" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" fill="#57606a" xml:space="preserve">41 B8 D1 03 00 00</text>
+<text x="288" y="252" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" fill="#1f2328" xml:space="preserve" font-weight="700">mov</text>
+<text x="332" y="252" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" fill="#1f2328" xml:space="preserve"><tspan fill="#0550ae">r8d</tspan><tspan fill="#1f2328">, </tspan><tspan fill="#9a6700" font-weight="700">0x3D1</tspan></text>
+<text x="472" y="252" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" fill="#8b949e" xml:space="preserve">; release downloads:</text>
+<text x="814" y="252" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" font-weight="700" fill="#1f2328" text-anchor="end">977</text>
+<text x="48" y="275" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" fill="#8b949e" xml:space="preserve">140001028</text>
+<text x="134" y="275" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" fill="#57606a" xml:space="preserve">41 B9 0D 00 00 00</text>
+<text x="288" y="275" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" fill="#1f2328" xml:space="preserve" font-weight="700">mov</text>
+<text x="332" y="275" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" fill="#1f2328" xml:space="preserve"><tspan fill="#0550ae">r9d</tspan><tspan fill="#1f2328">, </tspan><tspan fill="#9a6700" font-weight="700">0xD</tspan></text>
+<text x="472" y="275" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" fill="#8b949e" xml:space="preserve">; on GitHub since 2013:</text>
+<text x="814" y="275" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" font-weight="700" fill="#1f2328" text-anchor="end">13 years</text>
+<rect x="18" y="282.5" width="804" height="23" rx="5" fill="rgba(191,135,0,0.14)"/>
+<path d="M27 289l8 5l-8 5z" fill="#9a6700"/>
+<text x="48" y="298" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" fill="#8b949e" xml:space="preserve">14000102E</text>
+<text x="134" y="298" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" fill="#57606a" xml:space="preserve">E8 CD 0F 00 00</text>
+<text x="288" y="298" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" fill="#116329" xml:space="preserve" font-weight="700">call</text>
+<text x="332" y="298" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" fill="#1f2328" xml:space="preserve"><tspan fill="#116329">&lt;github.commit&gt;</tspan></text>
+<text x="472" y="298" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" fill="#8b949e" xml:space="preserve">; redrawn nightly:</text>
+<text x="814" y="298" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" font-weight="700" fill="#1f2328" text-anchor="end">2026-11-25</text>
+<text x="48" y="321" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" fill="#8b949e" xml:space="preserve">140001033</text>
+<text x="134" y="321" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" fill="#57606a" xml:space="preserve">EB CF</text>
+<text x="288" y="321" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" fill="#116329" xml:space="preserve" font-weight="700">jmp</text>
+<text x="332" y="321" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" fill="#1f2328" xml:space="preserve"><tspan fill="#1f2328">short </tspan><tspan fill="#116329">140001004</tspan></text>
+<text x="472" y="321" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" fill="#8b949e" xml:space="preserve">; same again tomorrow</text>
+
+</svg>
