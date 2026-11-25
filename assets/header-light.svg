@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 272" width="840" height="272" role="img" aria-label="Hi, I'm Mahdi. I build web applications in PHP and native Windows tools in Delphi.">
+<title>Hi, I'm Mahdi. I build web applications in PHP and native Windows tools in Delphi.</title>
+<defs><clipPath id="clip-mahdihex"><rect x="0.5" y="0.5" width="839" height="271" rx="12"/></clipPath></defs>
+<g clip-path="url(#clip-mahdihex)">
+<rect width="840" height="272" fill="#ffffff"/>
+<rect width="840" height="38" fill="#f6f8fa"/>
+<path d="M0 38.5H840" stroke="#d0d7de"/>
+</g>
+<rect x="0.5" y="0.5" width="839" height="271" rx="12" fill="none" stroke="#d0d7de"/>
+<path d="M31,12L37.06,15.5L37.06,22.5L31,26L24.94,22.5L24.94,15.5Z" fill="#9a6700"/>
+<text x="46" y="23.5" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="13" fill="#57606a">mahdi.hex</text>
+<text x="814" y="23.5" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12" fill="#8b949e" text-anchor="end">LifeIsHex</text>
+<path d="M792,52L809.32,62L809.32,82L792,92L774.68,82L774.68,62Z" fill="none" stroke="#9a6700" stroke-opacity="0.5" stroke-width="1.5"/>
+<path d="M753.89,52L771.22,62L771.22,82L753.89,92L736.57,82L736.57,62Z" fill="none" stroke="#9a6700" stroke-opacity="0.32" stroke-width="1.5"/>
+<path d="M715.79,52L733.11,62L733.11,82L715.79,92L698.47,82L698.47,62Z" fill="none" stroke="#9a6700" stroke-opacity="0.18" stroke-width="1.5"/>
+<path d="M677.68,52L695.01,62L695.01,82L677.68,92L660.36,82L660.36,62Z" fill="none" stroke="#9a6700" stroke-opacity="0.08" stroke-width="1.5"/>
+<path d="M772.95,85L790.27,95L790.27,115L772.95,125L755.63,115L755.63,95Z" fill="none" stroke="#9a6700" stroke-opacity="0.3" stroke-width="1.5"/>
+<path d="M734.84,85L752.16,95L752.16,115L734.84,125L717.52,115L717.52,95Z" fill="none" stroke="#9a6700" stroke-opacity="0.16" stroke-width="1.5"/>
+<path d="M696.74,85L714.06,95L714.06,115L696.74,125L679.42,115L679.42,95Z" fill="none" stroke="#9a6700" stroke-opacity="0.07" stroke-width="1.5"/>
+<path d="M792,118L809.32,128L809.32,148L792,158L774.68,148L774.68,128Z" fill="none" stroke="#9a6700" stroke-opacity="0.12" stroke-width="1.5"/>
+<path d="M753.89,118L771.22,128L771.22,148L753.89,158L736.57,148L736.57,128Z" fill="none" stroke="#9a6700" stroke-opacity="0.06" stroke-width="1.5"/>
+<path d="M60,66L89.44,83L89.44,117L60,134L30.56,117L30.56,83Z" fill="rgba(191,135,0,0.14)" stroke="#9a6700" stroke-width="2"/>
+<text x="60" y="108" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="22" font-weight="700" fill="#9a6700" text-anchor="middle">0x</text>
+<text x="114" y="100" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="38" font-weight="700" fill="#1f2328">Hi, I'm Mahdi</text>
+<text x="115" y="128" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="15.5" fill="#57606a">I build web applications in PHP and native Windows tools in Delphi.</text>
+<rect x="26" y="160" width="46" height="26" rx="13" fill="#eef1f4" stroke="#d0d7de"/>
+<text x="49" y="177" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12" fill="#1f2328" text-anchor="middle">PHP</text>
+<rect x="80" y="160" width="104" height="26" rx="13" fill="#eef1f4" stroke="#d0d7de"/>
+<text x="132" y="177" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12" fill="#1f2328" text-anchor="middle">CodeIgniter</text>
+<rect x="192" y="160" width="75" height="26" rx="13" fill="#eef1f4" stroke="#d0d7de"/>
+<text x="229.5" y="177" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12" fill="#1f2328" text-anchor="middle">Laravel</text>
+<rect x="275" y="160" width="61" height="26" rx="13" fill="#eef1f4" stroke="#d0d7de"/>
+<text x="305.5" y="177" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12" fill="#1f2328" text-anchor="middle">MySQL</text>
+<rect x="344" y="160" width="68" height="26" rx="13" fill="#eef1f4" stroke="#d0d7de"/>
+<text x="378" y="177" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12" fill="#1f2328" text-anchor="middle">Docker</text>
+<rect x="420" y="160" width="68" height="26" rx="13" fill="#eef1f4" stroke="#d0d7de"/>
+<text x="454" y="177" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12" fill="#1f2328" text-anchor="middle">Delphi</text>
+<rect x="496" y="160" width="90" height="26" rx="13" fill="#eef1f4" stroke="#d0d7de"/>
+<text x="541" y="177" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12" fill="#1f2328" text-anchor="middle">Win32 API</text>
+<path d="M26 202H814" stroke="#d0d7de" stroke-dasharray="2 4"/>
+<text x="26" y="224" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="13.5" fill="#8b949e" xml:space="preserve">00000000</text>
+<text x="118" y="224" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="13.5" xml:space="preserve"><tspan fill="#57606a">48</tspan> <tspan fill="#57606a">69</tspan> <tspan fill="#57606a">2C</tspan> <tspan fill="#57606a">20</tspan> <tspan fill="#57606a">49</tspan> <tspan fill="#57606a">27</tspan> <tspan fill="#57606a">6D</tspan> <tspan fill="#57606a">20</tspan>  <tspan fill="#9a6700" font-weight="700">4D</tspan> <tspan fill="#9a6700" font-weight="700">61</tspan> <tspan fill="#9a6700" font-weight="700">68</tspan> <tspan fill="#9a6700" font-weight="700">64</tspan> <tspan fill="#9a6700" font-weight="700">69</tspan> <tspan fill="#57606a">2E</tspan> <tspan fill="#57606a">20</tspan> <tspan fill="#57606a">20</tspan> </text>
+<text x="546" y="224" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="13.5" fill="#8b949e" xml:space="preserve">|<tspan fill="#1f2328">H</tspan><tspan fill="#1f2328">i</tspan><tspan fill="#1f2328">,</tspan><tspan fill="#1f2328"> </tspan><tspan fill="#1f2328">I</tspan><tspan fill="#1f2328">'</tspan><tspan fill="#1f2328">m</tspan><tspan fill="#1f2328"> </tspan><tspan fill="#9a6700" font-weight="700">M</tspan><tspan fill="#9a6700" font-weight="700">a</tspan><tspan fill="#9a6700" font-weight="700">h</tspan><tspan fill="#9a6700" font-weight="700">d</tspan><tspan fill="#9a6700" font-weight="700">i</tspan><tspan fill="#1f2328">.</tspan><tspan fill="#1f2328"> </tspan><tspan fill="#1f2328"> </tspan>|</text>
+<text x="26" y="246" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="13.5" fill="#8b949e" xml:space="preserve">00000010</text>
+<text x="118" y="246" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="13.5" xml:space="preserve"><tspan fill="#57606a">4C</tspan> <tspan fill="#57606a">69</tspan> <tspan fill="#57606a">66</tspan> <tspan fill="#57606a">65</tspan> <tspan fill="#57606a">20</tspan> <tspan fill="#57606a">69</tspan> <tspan fill="#57606a">73</tspan> <tspan fill="#57606a">20</tspan>  <tspan fill="#57606a">68</tspan> <tspan fill="#57606a">65</tspan> <tspan fill="#57606a">78</tspan> <tspan fill="#57606a">2E</tspan> </text>
+<text x="546" y="246" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="13.5" fill="#8b949e" xml:space="preserve">|<tspan fill="#1f2328">L</tspan><tspan fill="#1f2328">i</tspan><tspan fill="#1f2328">f</tspan><tspan fill="#1f2328">e</tspan><tspan fill="#1f2328"> </tspan><tspan fill="#1f2328">i</tspan><tspan fill="#1f2328">s</tspan><tspan fill="#1f2328"> </tspan><tspan fill="#1f2328">h</tspan><tspan fill="#1f2328">e</tspan><tspan fill="#1f2328">x</tspan><tspan fill="#1f2328">.</tspan>|</text>
+
+</svg>
