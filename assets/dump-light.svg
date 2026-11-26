@@ -381,6 +381,8 @@
 <text x="798.19" y="146.5" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="11.5" fill="#8b949e" text-anchor="middle">00</text>
 <rect x="785.38" y="156" width="25.62" height="20" rx="4" fill="#f9dc8c"/>
 <text x="798.19" y="170.5" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="11.5" fill="#3d2a00" text-anchor="middle" font-weight="700">03</text>
+<rect x="785.38" y="180" width="25.62" height="20" rx="4" fill="#eceff2"/>
+<text x="798.19" y="194.5" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="11.5" fill="#8b949e" text-anchor="middle">00</text>
 <text x="26" y="274" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12" fill="#57606a">one byte per day: that day's contributions, in hex</text>
 <text x="814" y="274" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12" fill="#57606a" text-anchor="end">More</text>
 <rect x="758" y="263" width="14" height="14" rx="3" fill="#7d4e00"/>
